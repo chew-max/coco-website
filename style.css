@@ -32,6 +32,9 @@ body {
   font-variation-settings:
     "YEAR" 1979;
 }
+.bold {
+	font-weight: 900;
+}
 
 /* ------------------------------------------
   NAVBAR
