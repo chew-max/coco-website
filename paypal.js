@@ -1,29 +1,36 @@
  document.addEventListener('DOMContentLoaded', function() { 
   const cartTable = document.getElementById('cartItems');
   const totalElem = document.getElementById('cartTotal');
+  var subTotal = document.getElementById('Subtotal');
+  var paypalElem;
   var finalAmount;
 
  
- cartTable.innerHTML = '';
-	let total = 0;
+    cartTable.innerHTML = '';
+    let total = 0;
 
-	cart.forEach((item, index) => {
-	const subtotal = item.price * item.quantity;
-	total += subtotal;
+    cart.forEach((item, index) => {
+      const subtotal = item.price * item.quantity;
+      total += subtotal;
 
-	const row = document.createElement('tr');
-	row.innerHTML = `
-	<td>${item.name}</td>
-	<td>$${item.price.toFixed(2)}</td>
-	<td><input type="number" min="1" value="${item.quantity}" data-index="${index}" class="qty-input"></td>
-	<td>$${subtotal.toFixed(2)}</td>
-	<td><button class="remove-btn" data-index="${index}">×</button></td>
-	`;
-	cartTable.appendChild(row);
-	});
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${item.name}</td>
+        <td>$${item.price.toFixed(2)}</td>
+        <td><input type="number" min="1" value="${item.quantity}" data-index="${index}" class="qty-input"></td>
+        <td>$${subtotal.toFixed(2)}</td>
+        <td><button class="remove-btn" data-index="${index}">×</button></td>
+      `;
+      cartTable.appendChild(row);
+    });
+ 	if (localStorage.cocoCart.length > 2) {
+		paypalElem = +total + + 4.99;
+		const inthis = String(paypalElem);
+		subTotal.textContent = total
+		totalElem.textContent = inthis;
+		localStorage.setItem('cocoCart', JSON.stringify(cart));
+	}
 
-	totalElem.textContent = `$${total.toFixed(2)}`;
-	finalAmount = `${total.toFixed(2)}`;
 
 	
 paypal.Buttons({

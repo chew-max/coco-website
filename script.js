@@ -37,7 +37,8 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
 
     localStorage.setItem('cocoCart', JSON.stringify(cart));
     alert(`${item.name} added to your cart!`);
-	document.querySelector('.cart-full').style.display = 'inline'
+	document.querySelector('.cart-full').style.display = 'inline';
+	document.querySelector('#shipping').style.display = 'inline'
 	window.scrollTo(0, 0);
   });
 });
@@ -84,6 +85,9 @@ if (window.location.pathname.includes('products.html')) {
       }
       localStorage.setItem('cocoCart', JSON.stringify(cart));
       alert(`${product.name} added to your cart!`);
+	  location.reload();
+	  window.scrollTo(0,0)
+
     });
   }
 }
@@ -93,6 +97,7 @@ if (window.location.pathname.includes('cart.html')) {
   const cartTable = document.getElementById('cartItems');
   const totalElem = document.getElementById('cartTotal');
   var paypalElem = document.getElementById('paypal-amount');
+  var subTotal = document.getElementById('Subtotal');
 
   function updateCartDisplay() {
     cartTable.innerHTML = '';
@@ -112,8 +117,11 @@ if (window.location.pathname.includes('cart.html')) {
       `;
       cartTable.appendChild(row);
     });
-
-    totalElem.textContent = `$${total.toFixed(2)}`;
+	
+  	paypalElem = +total + + 4.99;
+	const inthis = String(paypalElem);
+	subTotal.textContent = total
+    totalElem.textContent = inthis;
     localStorage.setItem('cocoCart', JSON.stringify(cart));
 
   }
@@ -128,6 +136,7 @@ if (window.location.pathname.includes('cart.html')) {
       if (cart[index].quantity <= 0) cart[index].quantity = 1;
       updateCartDisplay();
 	  location.reload();
+	  window.scrollTo(0,0)
     }
   });
 
@@ -138,6 +147,7 @@ if (window.location.pathname.includes('cart.html')) {
       cart.splice(index, 1);
       updateCartDisplay();
 	  location.reload();
+	  window.scrollTo(0,0)
     }
   });
 
@@ -145,5 +155,10 @@ if (window.location.pathname.includes('cart.html')) {
 
 //Check cart
 if (localStorage.cocoCart.length > 2) {
-	document.querySelector('.cart-full').style.display = 'inline'
+	document.querySelector('.cart-full').style.display = 'inline';
+	document.querySelector('#shipping').style.display = 'inline'
+	document.querySelector('.cartTotal').style.display = 'inline'
+	document.querySelector('#paypal-button-containerl').style.display = 'inline'
 }
+
+

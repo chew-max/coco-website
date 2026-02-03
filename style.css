@@ -276,6 +276,13 @@ section.policy-content {
 .cart-full {
 	display:none;
 }
+#shipping {
+	display:none;
+}
+.cartTotal {
+	display:none;
+}
+
 
 /* ------------------------------------------
   PRODUCT DETAILS PAGE
@@ -366,6 +373,15 @@ section.policy-content {
   padding: 3rem 2rem;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+section.policy-content-cart {
+  background-color: #fff;
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 3rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+
 }
 
 .policy-content h2 {
