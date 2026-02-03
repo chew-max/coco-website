@@ -60,10 +60,12 @@ body {
 }
 
 .nav-links li a {
-  text-decoration: none;
-  color: #555;
-  font-weight: 600;
-  transition: color 0.3s ease;
+	text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    font-family: 'Playfair Display', serif;
+    font-size: 1em;
 }
 
 .nav-links li a:hover,
