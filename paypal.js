@@ -50,7 +50,9 @@ paypal.Buttons({
   },
   onApprove: function(data, actions) {
     return actions.order.capture().then(function(details) {
-      alert('Transaction completed by ' + details.payer.name.given_name);
+      alert('Transaction completed by ' + details.payer.name.given_name + ". Please check your email for receipt and tracking upddates.");
+	  localStorage.clear();
+      location.reload();
     });
   }
 }).render('#paypal-button-container');
