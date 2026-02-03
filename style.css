@@ -32,8 +32,8 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem 3rem;
-  background-color: #fff;
-  border-bottom: 1px solid #eee;
+  background-color: #040656;
+  border-bottom: 3px solid gold;
 }
 
 .logo {
@@ -50,7 +50,7 @@ body {
 .logo h1 {
   font-family: 'Playfair Display', serif;
   font-size: 1.8rem;
-  color: #333;
+  color: wheat;
 }
 
 .nav-links {
