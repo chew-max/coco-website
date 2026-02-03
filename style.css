@@ -93,7 +93,7 @@ body {
   font-size: 1.1rem;
   max-width: 600px;
   margin: 0 auto 2rem;
-  color: #666;
+  color: #333;
 }
 .hero2 {
   background: url(images/fluffy-hero.png) center no-repeat;
@@ -166,6 +166,7 @@ section.cart-container {
     width: 100%;
     display: grid;
     margin: auto;
+    padding: 20px;
 }
 
 /* ------------------------------------------
@@ -215,7 +216,7 @@ section.cart-container {
 }
 
 .shop-intro p {
-  color: #666;
+  color: #333;
 }
 
 .shop-grid {
