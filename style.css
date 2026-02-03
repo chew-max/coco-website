@@ -382,9 +382,7 @@ section.policy-content {
 /* ------------------------------------------
   FULL-LENGTH HERO BANNER
 ------------------------------------------- */
-header {
-    height: 175px;
-}
+
 .hero-banner {
   position: relative;
   width: 100%;
