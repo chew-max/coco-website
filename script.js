@@ -37,32 +37,34 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
 
     localStorage.setItem('cocoCart', JSON.stringify(cart));
     alert(`${item.name} added to your cart!`);
+	document.querySelector('.cart-full').style.display = 'inline'
+	window.scrollTo(0, 0);
   });
 });
 
 // --- PRODUCT DETAILS PAGE LOGIC ---
-if (window.location.pathname.includes('product.html')) {
+if (window.location.pathname.includes('products.html')) {
   const params = new URLSearchParams(window.location.search);
   const id = params.get('id');
 
   const products = {
-    toy1: {
+    blue_ball: {
       name: 'Luxury Chew Toy',
-      price: 24.99,
+      price: 1.99,
       description: 'Crafted from non-toxic rubber — durable yet elegant for everyday play.',
-      image: 'images/toy1.jpg'
+      image: 'images/blue_ball.jpg'
     },
-    toy2: {
-      name: 'Soft Plush Bone',
-      price: 19.99,
-      description: 'A snuggly soft bone toy designed with Coco’s favorite texture.',
-      image: 'images/toy2.jpg'
+    orange_ball: {
+      name: 'Luxury Chew Toy',
+      price: 1.99,
+      description: 'Crafted from non-toxic rubber — durable yet elegant for everyday play.',
+      image: 'images/orange_ball.jpg'
     },
-    toy3: {
-      name: 'Deluxe Rope Toy',
-      price: 21.50,
-      description: 'A hand-wrapped rope toy with natural cotton fibers perfect for tug fun.',
-      image: 'images/toy3.jpg'
+    yellow_ball: {
+      name: 'Luxury Chew Toy',
+      price: 1.99,
+      description: 'Crafted from non-toxic rubber — durable yet elegant for everyday play.',
+      image: 'images/yellow_ball.jpg'
     }
   };
 
@@ -125,6 +127,7 @@ if (window.location.pathname.includes('cart.html')) {
       cart[index].quantity = parseInt(e.target.value);
       if (cart[index].quantity <= 0) cart[index].quantity = 1;
       updateCartDisplay();
+	  location.reload();
     }
   });
 
@@ -134,7 +137,13 @@ if (window.location.pathname.includes('cart.html')) {
       const index = e.target.dataset.index;
       cart.splice(index, 1);
       updateCartDisplay();
+	  location.reload();
     }
   });
 
+}
+
+//Check cart
+if (localStorage.cocoCart.length > 2) {
+	document.querySelector('.cart-full').style.display = 'inline'
 }

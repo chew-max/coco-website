@@ -26,21 +26,26 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
         <li><a href="shop.html">Shop</a></li>
-        <li><a href="products.html">Products</a></li>
         <li><a href="contact.html">Contact</a></li>
+		<li><a href="cart.html">Cart</a></li>
+		<li class="cart-full"><a href="cart.html"><img src="images/add_to_cart.png" alt="cart full" style="
+    height: 30px;
+"></a></li>
+
       </ul>
     </nav>
   </header>
 
   <section class="product-details">
-    <img src="toy1.jpg" alt="Luxury Chew Toy" class="product-image" />
+    <img id="productImage" src="" alt="" class="product-image" />
     <div class="product-info">
-      <h2>Luxury Chew Toy</h2>
-      <p class="product-price">$24.99</p>
-      <p>Our signature Coco Chew Toy is made from premium, non-toxic rubber with a soft matte finish — perfect for pampered pups who love playtime.</p>
-      <a href="#" class="btn-primary">Add to Cart</a>
+      <h2 id="productName"></h2>
+      <p id="productPrice" class="product-price"></p>
+      <p id="productDescription"></p>
+      <button id="addToCartBtn" class="btn-primary">Add to Cart</button>
     </div>
   </section>
+
   <footer>
     <div class="footer-content">
       <p>© 2026 Coco Pet Brand | Designed with love 🐾</p>
@@ -59,6 +64,8 @@
       </div>
     </div>
   </footer>
+
+
 
   <script src="script.js"></script>
 </body>

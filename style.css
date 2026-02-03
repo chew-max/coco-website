@@ -273,6 +273,9 @@ section.policy-content {
   font-weight: 600;
   margin-bottom: 0.8rem;
 }
+.cart-full {
+	display:none;
+}
 
 /* ------------------------------------------
   PRODUCT DETAILS PAGE
