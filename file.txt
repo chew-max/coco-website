@@ -1,0 +1,13 @@
+coco-website/
+│
+├── index.html
+├── shop.html
+├── products.html
+├── contact.html
+├── style.css
+├── script.js
+└── /images/
+     ├── your-logo.png
+     ├── toy1.jpg
+     ├── toy2.jpg
+     └── toy3.jpg
