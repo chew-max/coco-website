@@ -38,7 +38,7 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
     localStorage.setItem('cocoCart', JSON.stringify(cart));
 	document.querySelector('.cart-full').style.display = 'inline';
 	window.scrollTo(0, 0);
-	document.querySelector('#shipping').style.display = 'inline'
+	
 	
   });
 });
@@ -92,7 +92,7 @@ if (window.location.pathname.includes('products.html')) {
 }
 
 // --- CART PAGE LOGIC ---
-if (window.location.pathname.includes('cart.html')) {
+if (window.location.pathname.includes('cart.html') || window.location.pathname.includes('thank-you.html') ) {
   const cartTable = document.getElementById('cartItems');
   const totalElem = document.getElementById('cartTotal');
   var paypalElem = document.getElementById('paypal-amount');
@@ -112,7 +112,7 @@ if (window.location.pathname.includes('cart.html')) {
         <td>$${item.price.toFixed(2)}</td>
         <td><input type="number" min="1" value="${item.quantity}" data-index="${index}" class="qty-input"></td>
         <td>$${subtotal.toFixed(2)}</td>
-        <td><button class="remove-btn" data-index="${index}">×</button></td>
+        <td><button class="remove-btn x-button" data-index="${index}">×</button></td>
       `;
       cartTable.appendChild(row);
     });
@@ -120,7 +120,7 @@ if (window.location.pathname.includes('cart.html')) {
   	paypalElem = +total + + 4.99;
 	const inthis = String(paypalElem);
 	subTotal.textContent = total
-    totalElem.textContent = inthis;
+    if (!window.location.pathname.includes('thank-you.html')){totalElem.textContent = inthis;}
     localStorage.setItem('cocoCart', JSON.stringify(cart));
 	window.scrollTo(0, 0);
 
@@ -156,11 +156,25 @@ if (window.location.pathname.includes('cart.html')) {
 //Check cart
 if (localStorage.cocoCart.length > 2) {
 	document.querySelector('.cart-full').style.display = 'inline';
+	const navLinks = document.getElementById('orderNumber');
 	
 	if (window.location.pathname.includes('cart.html')) {
 		document.querySelector('#shipping').style.display = 'inline';
 		document.querySelector('.cartTotal').style.display = 'inline';
 	}
+	if (window.location.pathname.includes('thank-you.html')) {
+		orderNumber.textContent = "#" + getRandomInt(9999)
+		document.getElementById('itemDetails').value = localStorage.cocoCart
+		
+	window.onbeforeunload = function(event) {
+    // do stuff here
+		/* the page isn't being discarded, so it can be reused later */
+		localStorage.clear();
+		location.reload();
+};
+	}
 }
 
-
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max); 
+}

@@ -2,6 +2,7 @@
   const cartTable = document.getElementById('cartItems');
   const totalElem = document.getElementById('cartTotal');
   var subTotal = document.getElementById('Subtotal');
+  var orderDescriptions = document.getElementById('orderDetails');
   var paypalElem;
   var finalAmount;
 
@@ -43,17 +44,27 @@ paypal.Buttons({
     return actions.order.create({
       purchase_units: [{
         amount: {
-          value: finalAmount
-        }
+          value: finalAmount,
+		  description: localStorage.cocoCart
+        },
+      description: localStorage.cocoCart
+
       }]
     });
   },
   onApprove: function(data, actions) {
     return actions.order.capture().then(function(details) {
-      alert('Transaction completed by ' + details.payer.name.given_name + ". Please check your email for receipt and tracking upddates.");
-	  localStorage.clear();
-      location.reload();
+      window.location = ('thank-you.html') 
+	  orderDescriptions.textContent = localStorage.cocoCart;
     });
   }
 }).render('#paypal-button-container');
  });
+ 
+ 
+     <form id="contactForm" action="https://formspree.io/f/mlglzzjq"" method="POST" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+      <button type="submit" class="btn-primary">Send Message</button>
+    </form>

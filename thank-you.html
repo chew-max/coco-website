@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="view-transition" content="same-origin">
+
+  <title>Coco | Luxury Pet Brand</title>
+  <link rel="stylesheet" href="style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Climate+Crisis:YEAR@1979&display=swap" rel="stylesheet">
+</head>
+<body class="thankyou">
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html"><img src="images/generated-image-1.png" alt="Coco Logo" /></a>
+		<h1>Coco Pet Brand & Co🐾</h1>
+      </div>
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="contact.html">Contact</a></li>
+		<li><a href="cart.html">Cart</a></li>
+		<li class="cart-full"><a href="cart.html"><img src="images/add_to_cart.png" alt="cart full" style="
+    height: 30px;
+"></a></li>
+
+      </ul>
+    </nav>
+  </header>
+     <section class="policy-content">
+         <h2 style="text-align:left">Thank You!</h2>
+        <p>Your order has been received and is being processed!</p>
+		<p><strong>Order Number:</strong> <span id="orderNumber"></span>. A confirmation email has been sent to you.</p>
+		  </br>
+		  <hr>
+		  <h2 style="text-align:left">Your Invoice</h2>
+    <table class="cart-table">
+      <tbody id="cartItems"></tbody>
+    </table>
+        <div class="order-details">
+			<p id="orderDetails"></p>
+			 <h3 class="Subtotal">Total: <span id="Subtotal">$0.00</span></h3>
+        </div>
+		</br>
+      
+        <br>
+        <a href="shop.html" class="btn">Continue Shopping</a>
+	  <form style="visibility:hidden" id="contactForm" action="https://formspree.io/f/mlglzzjq"" method="POST" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea id="itemDetails" name="message" placeholder="Your Message" rows="6" required></textarea>
+      <button type="submit" class="btn-primary">Send Message</button>
+    </form>
+    </section>
+	
+
+	<footer>
+    <div class="footer-content">
+      <p>© 2026 Coco Pet Brand | Designed with love 🐾</p>
+      <div class="footer-links">
+        <a href="terms.html">Terms & Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="shipping.html">Shipping & Returns</a>
+      </div>
+      <div class="social-links">
+        <a href="https://www.instagram.com/cocobrandco?utm_source=qr&igsh=MWw4NDl0OHpldzViNw==" target="_blank">
+          <img src="images/icon-instagram.png" alt="Instagram" />
+        </a>
+        <a href="https://tiktok.com/" target="_blank">
+          <img src="images/icon-tiktok.png" alt="TikTok" />
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="transition.js"></script>
+</body>
+</html>
