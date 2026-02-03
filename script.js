@@ -36,10 +36,10 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
     }
 
     localStorage.setItem('cocoCart', JSON.stringify(cart));
-    alert(`${item.name} added to your cart!`);
 	document.querySelector('.cart-full').style.display = 'inline';
-	document.querySelector('#shipping').style.display = 'inline'
 	window.scrollTo(0, 0);
+	document.querySelector('#shipping').style.display = 'inline'
+	
   });
 });
 
@@ -83,11 +83,10 @@ if (window.location.pathname.includes('products.html')) {
       } else {
         cart.push({ id, ...product, quantity: 1 });
       }
-      localStorage.setItem('cocoCart', JSON.stringify(cart));
-      alert(`${product.name} added to your cart!`);
-	  location.reload();
-	  window.scrollTo(0,0)
-
+   localStorage.setItem('cocoCart', JSON.stringify(cart));
+	window.scrollTo(0, 0);
+    document.querySelector('.cart-full').style.display = 'inline'
+	location.reload();
     });
   }
 }
@@ -123,6 +122,7 @@ if (window.location.pathname.includes('cart.html')) {
 	subTotal.textContent = total
     totalElem.textContent = inthis;
     localStorage.setItem('cocoCart', JSON.stringify(cart));
+	window.scrollTo(0, 0);
 
   }
 
@@ -146,8 +146,8 @@ if (window.location.pathname.includes('cart.html')) {
       const index = e.target.dataset.index;
       cart.splice(index, 1);
       updateCartDisplay();
-	  location.reload();
-	  window.scrollTo(0,0)
+	location.reload();
+	window.scrollTo(0, 0);
     }
   });
 
@@ -156,9 +156,11 @@ if (window.location.pathname.includes('cart.html')) {
 //Check cart
 if (localStorage.cocoCart.length > 2) {
 	document.querySelector('.cart-full').style.display = 'inline';
-	document.querySelector('#shipping').style.display = 'inline'
-	document.querySelector('.cartTotal').style.display = 'inline'
-
+	
+	if (window.location.pathname.includes('cart.html')) {
+		document.querySelector('#shipping').style.display = 'inline';
+		document.querySelector('.cartTotal').style.display = 'inline';
+	}
 }
 
 
