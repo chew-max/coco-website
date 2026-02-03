@@ -35,6 +35,25 @@ body {
 .bold {
 	font-weight: 900;
 }
+/* style.css */
+body {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* Adjust duration and timing as needed */
+}
+
+/* This class can be added on page load */
+body.loaded {
+    opacity: 1;
+}
+@view-transition {
+  navigation: auto;
+}
+
+/* Customize the default animation duration */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.8s;
+}
 
 /* ------------------------------------------
   NAVBAR
@@ -192,7 +211,14 @@ section.policy-content {
     margin: auto;
     padding: 20px;
 }
-
+section h2 {
+    font-family: 'Playfair Display', serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings: "YEAR" 1979;
+    font-size: 2.5rem;
+}
 /* ------------------------------------------
   FEATURES (HOME PAGE)
 ------------------------------------------- */

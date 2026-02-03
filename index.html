@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="view-transition" content="same-origin">
   <title>Coco | Luxury Pet Brand</title>
   <link rel="stylesheet" href="style.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +29,7 @@
         <li><a href="shop.html">Shop</a></li>
         <li><a href="contact.html">Contact</a></li>
 		<li><a href="cart.html">Cart</a></li>
-		<li class="cart-full"><a href="cart.html"><img src="images/add_to_cart.png" alt="cart full" style="
+		<li class="cart-full"><a onclick="return transitionToPage(this)" href="cart.html"><img src="images/add_to_cart.png" alt="cart full" style="
     height: 30px;
 "></a></li>
       </ul>
@@ -108,7 +109,9 @@
   </footer>
 
 
-
   <script src="script.js"></script>
+  <script src="transition.js"></script>
+	<script src="paypal.js"></script>
+  
 </body>
 </html>
