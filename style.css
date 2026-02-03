@@ -65,6 +65,7 @@ body {
     "YEAR" 1979;
   font-size: 1.8rem;
   color: white;
+  dissplay: inline;
 }
 
 .nav-links {
@@ -487,6 +488,12 @@ section.policy-content-cart {
   .hero-content h1 {
     font-size: 2.4rem;
   }
+    .logo h1 {
+    display:none;
+  }
+  .logo {
+    margin: auto;
+}
 }
 
 @media (max-width: 600px) {
@@ -502,6 +509,7 @@ section.policy-content-cart {
   .hero-content p {
     font-size: 1rem;
   }
+
 }
 
 
@@ -621,6 +629,7 @@ footer {
   width: 25px;
   height: 20px;
   cursor: pointer;
+  background: white;
 }
 
 .hamburger span {
