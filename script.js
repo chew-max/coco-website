@@ -166,12 +166,39 @@ if (localStorage.cocoCart.length > 2) {
 		orderNumber.textContent = "#" + getRandomInt(9999)
 		document.getElementById('itemDetails').value = localStorage.cocoCart
 		
-	window.onbeforeunload = function(event) {
-    // do stuff here
-		/* the page isn't being discarded, so it can be reused later */
-		localStorage.clear();
-		location.reload();
-};
+		//page change
+		window.addEventListener('beforeunload', (e) => {
+		  // Logic to check for unsaved changes, etc.
+		  const hasUnsavedChanges = true; // Replace with actual check
+
+		  if (hasUnsavedChanges) {
+			// Prevent the default navigation
+			e.preventDefault();
+			// Chrome requires returnValue to be set
+			e.returnValue = '';
+			// Most browsers will display a standard warning dialog
+		  } else {
+			  	location.reload();
+				window.scrollTo(0, 0);
+				localStorage.clear();
+		  }
+		});
+		
+		document.addEventListener('visibilitychange', () => {
+		  if (document.visibilityState === 'hidden') {
+			// Page is now hidden (user switched tabs, minimized, etc.)
+				location.reload();
+				window.scrollTo(0, 0);
+				localStorage.clear();
+			// Useful for sending analytics data using navigator.sendBeacon
+		  } else {
+			// Page is now visible
+				location.reload();
+				window.scrollTo(0, 0);
+				localStorage.clear();
+		  }
+		});
+
 	}
 }
 
