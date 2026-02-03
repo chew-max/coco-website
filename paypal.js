@@ -28,6 +28,7 @@
 		const inthis = String(paypalElem);
 		subTotal.textContent = total
 		totalElem.textContent = inthis;
+		finalAmount = inthis;
 		localStorage.setItem('cocoCart', JSON.stringify(cart));
 	}
 
