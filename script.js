@@ -158,7 +158,7 @@ if (localStorage.cocoCart.length > 2) {
 	document.querySelector('.cart-full').style.display = 'inline';
 	document.querySelector('#shipping').style.display = 'inline'
 	document.querySelector('.cartTotal').style.display = 'inline'
-	document.querySelector('#paypal-button-containerl').style.display = 'inline'
+
 }
 
 
