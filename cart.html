@@ -30,7 +30,7 @@
     </nav>
   </header>
 
-  <section class="cart-container">
+  <section class="cart-container policy-content">
     <h2>Your Cart</h2>
     <table class="cart-table">
       <thead>
@@ -46,7 +46,10 @@
     </table>
     <div class="cart-total">
       <h3>Total: <span id="cartTotal">$0.00</span></h3>
-      <a href="#" class="btn-primary-ckout">Checkout</a>
+      <!-- <a href="#" class="btn-primary-ckout">Checkout</a> -->
+<div id="paypal-button-container"></div>
+
+
     </div>
   </section>
 
@@ -69,6 +72,9 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+ 
+    <script src="https://www.paypal.com/sdk/js?client-id=ARsVKnv_kJpk9veh1XifvIx3g4_NHbVWgjksh3gcr6-67KjBqzXAvltnN0PfmAQfax7Pkbg5js0MPqf6"></script>
+    <script src="script.js"></script>
+	<script src="paypal.js"></script>
 </body>
 </html>

@@ -90,6 +90,7 @@ if (window.location.pathname.includes('product.html')) {
 if (window.location.pathname.includes('cart.html')) {
   const cartTable = document.getElementById('cartItems');
   const totalElem = document.getElementById('cartTotal');
+  var paypalElem = document.getElementById('paypal-amount');
 
   function updateCartDisplay() {
     cartTable.innerHTML = '';
@@ -112,6 +113,7 @@ if (window.location.pathname.includes('cart.html')) {
 
     totalElem.textContent = `$${total.toFixed(2)}`;
     localStorage.setItem('cocoCart', JSON.stringify(cart));
+
   }
 
   updateCartDisplay();
@@ -134,4 +136,5 @@ if (window.location.pathname.includes('cart.html')) {
       updateCartDisplay();
     }
   });
+
 }
