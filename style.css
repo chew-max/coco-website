@@ -583,7 +583,9 @@ section.policy-content-cart {
   .hamburger {
   display: flex;
   }
-
+.hero-banner {
+    height: 50vh;
+}
 }
 
 @media (max-width: 600px) {
@@ -597,7 +599,9 @@ section.policy-content-cart {
   .hero-content p {
     font-size: 1rem;
   }
-
+.hero-banner {
+    height: 35vh;
+}
 }
 
 
