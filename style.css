@@ -32,6 +32,14 @@ body {
   font-variation-settings:
     "YEAR" 1979;
 }
+
+.bodoni-moda-<uniquifier> {
+  font-family: "Bodoni Moda", serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
 .bold {
 	font-weight: 900;
 }
@@ -54,17 +62,29 @@ body.loaded {
 ::view-transition-new(root) {
   animation-duration: 0.8s;
 }
-
+/* CSS Styles */
+:root {
+  --primary-color: #2563eb;
+  --text-dark: #1f2937;
+  --white: #ffffff;
+}
 /* ------------------------------------------
   NAVBAR
 ------------------------------------------- */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.2rem 3rem;
-  background-color: rgba(2,7,77, .9);
-  border-bottom: 3px solid gold;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.2rem 3rem;
+	/*background-color: rgba(2,7,77, .9);*/
+	border-bottom: 3px solid gold;
+	background-color: #000000;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	padding: 1rem 0;s
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	height: 200px;
 }
 
 .logo {
@@ -79,15 +99,15 @@ body.loaded {
 }
 
 .logo h1 {
-  font-family: "Climate Crisis", sans-serif;
+  font-family: "Bodoni Moda", serif;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 900;
   font-style: normal;
   font-variation-settings:
     "YEAR" 1979;
-  font-size: 1.8rem;
+  font-size: 2.8rem;
   color: white;
-  dissplay: inline;
+  display: inline;
 }
 
 .nav-links {
@@ -109,7 +129,15 @@ body.loaded {
 .nav-links li a.active {
   color: #fff;
 }
-
+.main-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1.5rem 0;
+  background-color: transparent; /* Start transparent */
+  transition: all 0.4s ease-in-out; /* Smooth color change */
+  z-index: 1000;
+}
 /* ------------------------------------------
   HERO SECTION
 ------------------------------------------- */
