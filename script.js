@@ -163,8 +163,10 @@ if (localStorage.cocoCart.length > 2) {
 		document.querySelector('.cartTotal').style.display = 'inline';
 	}
 	if (window.location.pathname.includes('thank-you.html')) {
-		orderNumber.textContent = "#" + getRandomInt(9999)
-		document.getElementById('itemDetails').value = localStorage.cocoCart
+		var storeOrder =  getRandomInt(9999);
+		orderNumber.textContent = "#" + storeOrder;
+		//document.getElementById('itemDetails').value = localStorage.cocoCart
+		localStorage.setItem('orderID', storeOrder);
 		
 		//page change
 		window.addEventListener('beforeunload', (e) => {
@@ -180,7 +182,7 @@ if (localStorage.cocoCart.length > 2) {
 		  } else {
 			  	location.reload();
 				window.scrollTo(0, 0);
-				localStorage.clear();
+				//localStorage.clear();
 		  }
 		});
 		
@@ -189,15 +191,32 @@ if (localStorage.cocoCart.length > 2) {
 			// Page is now hidden (user switched tabs, minimized, etc.)
 				location.reload();
 				window.scrollTo(0, 0);
-				localStorage.clear();
+				//localStorage.clear();
 			// Useful for sending analytics data using navigator.sendBeacon
 		  } else {
 			// Page is now visible
 				location.reload();
 				window.scrollTo(0, 0);
-				localStorage.clear();
+				//localStorage.clear();
 		  }
 		});
+		
+		setTimeout(function() {
+		//const details = await response.json();
+
+			document.getElementById('itemDetails').value = localStorage.cocoCart;
+			document.getElementById('email').value = localStorage.customerEmail;
+			document.getElementById('name').value = localStorage.customerName
+			
+			const button = document.getElementById('submitForm');
+
+			// Call the submit() method
+			if (button) {
+				button.click();
+				localStorage.clear();
+			}
+			
+		}, 2000);
 
 	}
 }

@@ -114,6 +114,7 @@ body.loaded {
   list-style: none;
   display: flex;
   gap: 2rem;
+  margin-right: 30px;
 }
 
 .nav-links li a {
@@ -661,6 +662,7 @@ footer {
     flex-wrap: wrap;
     gap: 1rem;
     margin-top: 1rem;
+	margin-right: 0;
   }
 
   .hero-content h2 {
@@ -694,13 +696,14 @@ footer {
   width: 25px;
   height: 20px;
   cursor: pointer;
-  background: white;
+  margin-right: 20px;
+
 }
 
 .hamburger span {
   height: 3px;
   width: 100%;
-  background: #333;
+  background: #b39362;
   border-radius: 2px;
   transition: all 0.3s ease;
 }

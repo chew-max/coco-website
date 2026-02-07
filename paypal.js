@@ -54,8 +54,12 @@ paypal.Buttons({
   },
   onApprove: function(data, actions) {
     return actions.order.capture().then(function(details) {
-      window.location = ('thank-you.html') 
-	  orderDescriptions.textContent = localStorage.cocoCart;
+		
+	 localStorage.setItem('customerName', `${details.payer.name.given_name}` + " " + `${details.payer.name.surname}`);
+	 localStorage.setItem('customerEmail', `${details.payer.email_address}`);
+     window.location = ('thank-you.html') 
+	 orderDescriptions.textContent = localStorage.cocoCart;
+	  
     });
   }
 }).render('#paypal-button-container');
