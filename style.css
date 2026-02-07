@@ -148,6 +148,8 @@ body.loaded {
     transition: color 0.3s ease;
     font-family: 'Playfair Display', serif;
     font-size: 1em;
+	    top: 50px;
+    position: relative;
 }
 
 .nav-links li a:hover,
@@ -757,7 +759,7 @@ footer {
 @media (max-width: 1200px) {
   .nav-links {
     position: absolute;
-    top: 75px;
+    top: 0;
     left: -100%;
     width: 100%;
     flex-direction: column;
@@ -768,6 +770,7 @@ footer {
     transition: left 0.4s ease;
     border-top: 1px solid #eee;
     z-index: 1000;
+	height: 100%;
   }
 
   .nav-links.active {
