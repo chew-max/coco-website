@@ -121,15 +121,17 @@ body.loaded {
 }
 
 .logo h1 {
-  font-family: "Love Light", cursive;
-  font-style: normal;
-  font-weight: 900;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-  font-size: 4em;
-  color: white;
-  display: inline;
+    font-family: "Love Light", cursive;
+    font-style: normal;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-size: 3em;
+    color: white;
+    display: inline;
+    right: 66px;
+    position: relative;
+    top: 50px;
 }
 
 .nav-links {
@@ -582,9 +584,7 @@ section.policy-content-cart {
   .hero-content h1 {
     font-size: 2.4rem;
   }
-    .logo h1 {
-    display:none;
-  }
+
   .logo {
     margin: auto;
 }
