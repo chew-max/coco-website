@@ -580,15 +580,7 @@ section.policy-content-cart {
   .logo {
     margin: auto;
 }
-header {
-    position: fixed;
-    width: 100%;
-    background: black;
-    z-index: 999999999;
-}
-.hero-banner{
-	  height: 100vh; /* full screen height */
-}
+
   .hamburger {
   display: flex;
   }
