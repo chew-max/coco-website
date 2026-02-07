@@ -730,7 +730,7 @@ footer {
   width: 25px;
   height: 20px;
   cursor: pointer;
-
+  z-index: 99999999 !important;
 
 }
 
@@ -749,7 +749,7 @@ footer {
     left: -100%;
     width: 100%;
     flex-direction: column;
-    background-color: #fff;
+    background-color: #000;
     text-align: center;
     gap: 1.5rem;
     padding: 2rem 0;
