@@ -50,19 +50,19 @@ if (window.location.pathname.includes('products.html')) {
 
   const products = {
     blue_ball: {
-      name: 'Luxury Chew Toy',
+      name: 'Blue Chew Toy',
       price: 1.99,
       description: 'Crafted from non-toxic rubber — durable yet elegant for everyday play.',
       image: 'images/blue_ball.jpg'
     },
     orange_ball: {
-      name: 'Luxury Chew Toy',
+      name: 'Orange Chew Toy',
       price: 1.99,
       description: 'Crafted from non-toxic rubber — durable yet elegant for everyday play.',
       image: 'images/orange_ball.jpg'
     },
     yellow_ball: {
-      name: 'Luxury Chew Toy',
+      name: 'Yellow Chew Toy',
       price: 1.99,
       description: 'Crafted from non-toxic rubber — durable yet elegant for everyday play.',
       image: 'images/yellow_ball.jpg'
@@ -165,8 +165,11 @@ if (localStorage.cocoCart.length > 2) {
 	if (window.location.pathname.includes('thank-you.html')) {
 		var storeOrder =  getRandomInt(9999);
 		orderNumber.textContent = "#" + storeOrder;
-		//document.getElementById('itemDetails').value = localStorage.cocoCart
+		
+		//store order number to local storage
 		localStorage.setItem('orderID', storeOrder);
+		addOrderId(storeOrder); 
+		
 		
 		//page change
 		window.addEventListener('beforeunload', (e) => {
@@ -213,7 +216,9 @@ if (localStorage.cocoCart.length > 2) {
 			// Call the submit() method
 			if (button) {
 				button.click();
-				localStorage.clear();
+				localStorage.removeItem('cocoCart');
+				localStorage.removeItem('customerEmail');
+				localStorage.removeItem('customerName');
 			}
 			
 		}, 2000);
@@ -224,3 +229,57 @@ if (localStorage.cocoCart.length > 2) {
 function getRandomInt(max) {
   return Math.floor(Math.random() * max); 
 }
+
+/**
+ * Adds an order ID to 'localStorage' item 'orderIds' after checking for existing values.
+ * @param {string} newOrderId The new order ID to add.
+ */
+function addOrderId(newOrderId) {
+    const localStorageKey = 'orderIds';
+
+    // 1. Get existing order IDs from localStorage
+    const storedIdsString = localStorage.getItem(localStorageKey);
+    let orderIds = [];
+
+    if (storedIdsString) {
+        try {
+            // Try to parse the stored string back into an array
+            orderIds = JSON.parse(storedIdsString);
+            
+            // Ensure the parsed value is actually an array
+            if (!Array.isArray(orderIds)) {
+                orderIds = [];
+            }
+        } catch (e) {
+            // Handle parsing errors (e.g., corrupted data)
+            console.error("Error parsing orderIds from localStorage:", e);
+            orderIds = [];
+        }
+    }
+
+    // 2. Check if the new value already exists
+    if (orderIds.includes(newOrderId)) {
+        console.log(`Order ID ${newOrderId} already exists. Not adding.`);
+		var storeOrder =  getRandomInt(9999);
+		orderNumber.textContent = "#" + storeOrder;
+		
+		//store order number to local storage
+		localStorage.setItem('orderID', storeOrder);
+		addOrderId(storeOrder); 
+		
+        return; // Exit the function if already present
+    }
+
+    // 3. Add the new value and save back to localStorage
+    orderIds.push(newOrderId);
+
+    try {
+        // Convert the updated array back into a string and save
+        localStorage.setItem(localStorageKey, JSON.stringify(orderIds));
+        console.log(`Order ID ${newOrderId} added successfully.`);
+    } catch (e) {
+        console.error("Error saving orderIds to localStorage:", e);
+    }
+}
+
+
