@@ -40,6 +40,27 @@ body {
   font-style: normal;
 }
 
+
+.roboto-<uniquifier> {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+.rubik-bubbles-regular {
+  font-family: "Rubik Bubbles", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.love-light-regular {
+  font-family: "Love Light", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 .bold {
 	font-weight: 900;
 }
@@ -99,13 +120,13 @@ body.loaded {
 }
 
 .logo h1 {
-  font-family: "Bodoni Moda", serif;
-  font-optical-sizing: auto;
+  font-family: "Love Light", cursive;
+  font-style: normal;
   font-weight: 900;
   font-style: normal;
   font-variation-settings:
-    "YEAR" 1979;
-  font-size: 2.8rem;
+    "wdth" 100;
+  font-size: 4em;
   color: white;
   display: inline;
 }
@@ -499,8 +520,6 @@ section.policy-content-cart {
 /* Optional soft overlay (looks luxurious) */
 .hero-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
   height: 100%;
   width: 100%;
   background: rgba(255, 255, 255, 0.3); /* subtle white tint */
@@ -560,12 +579,20 @@ section.policy-content-cart {
   .logo {
     margin: auto;
 }
+header {
+    position: fixed;
+    width: 100%;
+    background: black;
+    z-index: 999999999;
+}
+.hero-banner{
+	  height: 100vh; /* full screen height */
+}
+
 }
 
 @media (max-width: 600px) {
-  .hero-banner {
-    height: 80vh; /* slightly shorter for mobile */
-  }
+
   .hero-content {
     padding: 1rem;
   }
@@ -748,4 +775,5 @@ footer {
   .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translateY(-8px);
   }
+
 }
