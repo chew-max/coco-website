@@ -508,7 +508,7 @@ section.policy-content-cart {
 .hero-banner {
   position: relative;
   width: 100%;
-  height: 50vh; /* full screen height */
+  height: 100vh; /* full screen height */
   background-image: url('images/coco-hero-no-words.png');
   background-position: center;
   background-size: cover;
@@ -520,7 +520,6 @@ section.policy-content-cart {
 
 /* Optional soft overlay (looks luxurious) */
 .hero-overlay {
-  position: absolute;
   height: 100%;
   width: 100%;
   background: rgba(255, 255, 255, 0.3); /* subtle white tint */
